@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Enlaces - Pixcro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #bf40bf;
+            --secondary-glow: #e066e0;
+            --background-color: #000;
+            --card-background: #16181c;
+            --text-color: #fff;
+            --muted-text-color: #b0b0b0;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem; /* Margen base para móvil */
+            overflow-x: hidden;
+        }
+
+        .container {
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 600px; /* Aumentado para reducir márgenes en escritorio */
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(191, 64, 191, 0.2) 0%, rgba(191, 64, 191, 0) 70%);
+            animation: ledGlow 6s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes ledGlow {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+            50% { transform: translate(25%, 25%) scale(1.2); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+        }
+
+        .logo {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 2rem;
+        }
+
+        .button-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .link-button {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: buttonGlow 3s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes buttonGlow {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .link-button:hover {
+            background-color: #a832a8;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .link-button:active {
+            transform: scale(0.98);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .link-button img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--input-background, #2f3336);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .social-link img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .schedule {
+            font-size: 0.875rem;
+            color: var(--muted-text-color);
+            line-height: 1.4;
+            margin-bottom: 2rem;
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .faq-section h2 img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            background-color: #2f3336;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background-color: #3b4045;
+        }
+
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.875rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            background-color: #212326;
+            padding: 0 1rem;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--muted-text-color);
+            line-height: 1.5;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px; /* Ajusta según contenido */
+            padding: 1rem;
+        }
+
+        .faq-answer a {
+            color: var(--text-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividad */
+        @media (min-width: 769px) {
+            .container {
+                max-width: 700px; /* Más ancho en escritorio */
+            }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 1.5rem; } /* Más margen en móvil */
+            .container { padding: 1.5rem; max-width: 100%; }
+            .logo { max-width: 80%; }
+            .link-button { padding: 0.875rem 1.25rem; font-size: 1rem; }
+            .link-button img { width: 20px; height: 20px; }
+            .social-link { width: 36px; height: 36px; }
+            .social-link img { width: 18px; height: 18px; }
+            .schedule { font-size: 0.75rem; }
+            .faq-section h2 { font-size: 1.25rem; }
+            .faq-question { font-size: 0.9rem; padding-left: 1.25rem; } /* Más margen a la izquierda */
+            .faq-answer { font-size: 0.8rem; padding-left: 1.25rem; } /* Más margen a la izquierda */
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 2rem 1.5rem; } /* Más margen arriba/abajo en móviles pequeños */
+            .container { padding: 1rem; }
+            .logo { max-width: 60%; }
+            .link-button { padding: 0.75rem 1rem; font-size: 0.875rem; }
+            .link-button img { width: 18px; height: 18px; }
+            .social-links { gap: 1rem; }
+            .social-link { width: 32px; height: 32px; }
+            .social-link img { width: 16px; height: 16px; }
+            .schedule { font-size: 0.6875rem; }
+            .faq-section h2 { font-size: 1.1rem; }
+            .faq-question { font-size: 0.85rem; padding-left: 1.5rem; } /* Más margen a la izquierda */
+            .faq-answer { font-size: 0.75rem; padding-left: 1.5rem; } /* Más margen a la izquierda */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="icon/logopixcro.png" alt="Pixcro Logo" class="logo">
+        <div class="button-list">
+            <a href="https://wa.me/+584121138338" target="_blank" class="link-button">
+                <img src="icon/whatsapp.png" alt="WhatsApp">
+                WhatsApp
+            </a>
+            <a href="#portafolio-web" target="_blank" class="link-button">
+                <img src="icon/website.png" alt="Portafolio Web">
+                Portafolio Web
+            </a>
+            <a href="https://www.tiktok.com/@pixcro" target="_blank" class="link-button">
+                <img src="icon/tik-tok.png" alt="TikTok">
+                TikTok
+            </a>
+            <a href="https://www.instagram.com/pixcro" target="_blank" class="link-button">
+                <img src="icon/instagram.png" alt="Instagram">
+                Instagram
+            </a>
+            <a href="https://www.behance.net/pixcro" target="_blank" class="link-button">
+                <img src="icon/behance.png" alt="Portafolio Behance">
+                Portafolio Behance
+            </a>
+            <a href="https://maps.app.goo.gl/8zqXy6rWq2eQfWMaA" target="_blank" class="link-button">
+                <img src="icon/ubicacion.png" alt="Ubicación">
+                Ubicación
+            </a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/pixcro" target="_blank" class="social-link">
+                <img src="icon/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/pixcro" target="_blank" class="social-link">
+                <img src="icon/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://x.com/pixcro" target="_blank" class="social-link">
+                <img src="icon/x.png" alt="X">
+            </a>
+            <a href="https://www.behance.net/pixcro" target="_blank" class="social-link">
+                <img src="icon/behance.png" alt="Behance">
+            </a>
+            <a href="https://www.tiktok.com/@pixcro" target="_blank" class="social-link">
+                <img src="icon/tik-tok.png" alt="TikTok">
+            </a>
+        </div>
+        <div class="schedule">
+            <p>Lunes a Viernes: 9am - 7pm</p>
+            <p>Sábados: 9am - 2pm</p>
+        </div>
+        <div class="faq-section">
+            <h2><img src="icon/ayudar.png" alt="Ayuda"> Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">¿Tienen una ubicación física?</div>
+                <div class="faq-answer">
+                    No disponemos de una sede física. Sin embargo, ofrecemos la flexibilidad de programar visitas a su lugar de trabajo, oficina o negocio. Alternativamente, podemos coordinar reuniones en ubicaciones céntricas, como restaurantes o cafeterías.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuál es el tiempo de entrega para un logotipo?</div>
+                <div class="faq-answer">
+                    El plazo de entrega para la creación de logotipos es de 4 a 5 días hábiles, sujeto a la disponibilidad de agenda, el paquete seleccionado y la confirmación del pago. También ofrecemos un servicio de entrega exprés, con un plazo de 24 a 48 horas, por un costo adicional del 50%. Este servicio prioritario implica trabajar fuera del horario regular para cumplir con plazos ajustados.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo funciona su sistema de agenda?</div>
+                <div class="faq-answer">
+                    Gestionamos nuestra agenda por orden de llegada. Por ejemplo, si tenemos cancelaciones un lunes, las nuevas solicitudes se programarán para comenzar el martes, y así sucesivamente. Es importante destacar que requerimos el pago por adelantado para asegurar su lugar en la agenda, esto aplica a todos nuestros servicios.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuáles son los costos de las asesorías?</div>
+                <div class="faq-answer">
+                    Las primeras tres asesorías en línea son completamente gratuitas. Además, ofrecemos la opción de reuniones diarias de 30 minutos por videollamada a través de plataformas como Zoom, Discord o Google Meet. Las asesorías presenciales (visitas a su local, reuniones en espacios públicos, etc.) tienen un costo de 8$ por hora.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Ofrecen servicios de impresión?</div>
+                <div class="faq-answer">
+                    Nuestro equipo se especializa exclusivamente en diseño. Sin embargo, según el servicio requerido, podemos gestionar la coordinación con imprentas locales, incluyendo el costo adicional en la cotización y la gestión de los envíos. Esto dependerá del servicio específico y la ubicación.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Realizan colaboraciones con otras empresas?</div>
+                <div class="faq-answer">
+                    En ocasiones, colaboramos con empresas, fundaciones, asociaciones e influencers. Este tipo de colaboración requiere una reunión previa para evaluar los términos, condiciones y beneficios mutuos.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo unirme al equipo de Pixcro?</div>
+                <div class="faq-answer">
+                    Anunciaremos las vacantes disponibles en nuestras redes sociales, como Instagram y WhatsApp. Sin embargo, puede enviarnos su currículum vitae y portafolio a <a href="mailto:pixcronegociosvzla@gmail.com">pixcronegociosvzla@gmail.com</a>, incluyendo un número de contacto de WhatsApp. Le responderemos a la brevedad posible para confirmar la recepción de su correo y notificarle sobre las oportunidades disponibles.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuáles son sus métodos de pago?</div>
+                <div class="faq-answer">
+                    Aceptamos pagos nacionales e internacionales:<br>
+                    • Pago Móvil.<br>
+                    • Transferencia bancaria (Banco de Venezuela y Banco Banesco).<br>
+                    • USDT (Binance y El dorado app).<br>
+                    • Divisas físicas (Puerto Ordaz, Ciudad Guayana).<br>
+                    <br>
+                    Con un 8% adicional:<br>
+                    • Wise (USD).<br>
+                    • Zinli.<br>
+                    • Wally.<br>
+                    • AirTm.<br>
+                    • Meru.<br>
+                    • Skrill.<br>
+                    • PayPal.<br>
+                    • Billetera P2P.<br>
+                    • CrixtoPay.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Ofrecen un programa de afiliados?</div>
+                <div class="faq-answer">
+                    Sí, contamos con un programa de afiliados para nuestro servicio de diseño de logotipos. Por cada cliente que refiera y contrate alguno de nuestros paquetes de diseño de logo, usted recibirá una comisión de 5 USD, pagada el mismo día en que se confirme el pago del cliente.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                item.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
