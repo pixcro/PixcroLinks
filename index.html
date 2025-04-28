@@ -32,7 +32,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 1rem; /* Margen base para móvil */
+            padding: 1rem;
             overflow-x: hidden;
         }
 
@@ -41,7 +41,7 @@
             padding: 2rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            max-width: 600px; /* Aumentado para reducir márgenes en escritorio */
+            max-width: 600px;
             width: 100%;
             text-align: center;
             position: relative;
@@ -239,7 +239,7 @@
         }
 
         .faq-answer.active {
-            max-height: 500px; /* Ajusta según contenido */
+            max-height: 500px;
             padding: 1rem;
         }
 
@@ -253,15 +253,14 @@
             text-decoration: underline;
         }
 
-        /* Responsividad */
         @media (min-width: 769px) {
             .container {
-                max-width: 700px; /* Más ancho en escritorio */
+                max-width: 700px;
             }
         }
 
         @media (max-width: 768px) {
-            body { padding: 1.5rem; } /* Más margen en móvil */
+            body { padding: 1.5rem; }
             .container { padding: 1.5rem; max-width: 100%; }
             .logo { max-width: 80%; }
             .link-button { padding: 0.875rem 1.25rem; font-size: 1rem; }
@@ -270,12 +269,12 @@
             .social-link img { width: 18px; height: 18px; }
             .schedule { font-size: 0.75rem; }
             .faq-section h2 { font-size: 1.25rem; }
-            .faq-question { font-size: 0.9rem; padding-left: 1.25rem; } /* Más margen a la izquierda */
-            .faq-answer { font-size: 0.8rem; padding-left: 1.25rem; } /* Más margen a la izquierda */
+            .faq-question { font-size: 0.9rem; padding-left: 1.25rem; }
+            .faq-answer { font-size: 0.8rem; padding-left: 1.25rem; }
         }
 
         @media (max-width: 480px) {
-            body { padding: 2rem 1.5rem; } /* Más margen arriba/abajo en móviles pequeños */
+            body { padding: 2rem 1.5rem; }
             .container { padding: 1rem; }
             .logo { max-width: 60%; }
             .link-button { padding: 0.75rem 1rem; font-size: 0.875rem; }
@@ -285,8 +284,8 @@
             .social-link img { width: 16px; height: 16px; }
             .schedule { font-size: 0.6875rem; }
             .faq-section h2 { font-size: 1.1rem; }
-            .faq-question { font-size: 0.85rem; padding-left: 1.5rem; } /* Más margen a la izquierda */
-            .faq-answer { font-size: 0.75rem; padding-left: 1.5rem; } /* Más margen a la izquierda */
+            .faq-question { font-size: 0.85rem; padding-left: 1.5rem; }
+            .faq-answer { font-size: 0.75rem; padding-left: 1.5rem; }
         }
     </style>
 </head>
@@ -298,10 +297,6 @@
                 <img src="icon/whatsapp.png" alt="WhatsApp">
                 WhatsApp
             </a>
-            <a href="#portafolio-web" target="_blank" class="link-button">
-                <img src="icon/website.png" alt="Portafolio Web">
-                Portafolio Web
-            </a>
             <a href="https://www.tiktok.com/@pixcro" target="_blank" class="link-button">
                 <img src="icon/tik-tok.png" alt="TikTok">
                 TikTok
@@ -310,14 +305,6 @@
                 <img src="icon/instagram.png" alt="Instagram">
                 Instagram
             </a>
-            <a href="https://www.behance.net/pixcro" target="_blank" class="link-button">
-                <img src="icon/behance.png" alt="Portafolio Behance">
-                Portafolio Behance
-            </a>
-            <a href="https://maps.app.goo.gl/8zqXy6rWq2eQfWMaA" target="_blank" class="link-button">
-                <img src="icon/ubicacion.png" alt="Ubicación">
-                Ubicación
-            </a>
         </div>
         <div class="social-links">
             <a href="https://www.instagram.com/pixcro" target="_blank" class="social-link">
@@ -325,12 +312,6 @@
             </a>
             <a href="https://www.facebook.com/pixcro" target="_blank" class="social-link">
                 <img src="icon/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://x.com/pixcro" target="_blank" class="social-link">
-                <img src="icon/x.png" alt="X">
-            </a>
-            <a href="https://www.behance.net/pixcro" target="_blank" class="social-link">
-                <img src="icon/behance.png" alt="Behance">
             </a>
             <a href="https://www.tiktok.com/@pixcro" target="_blank" class="social-link">
                 <img src="icon/tik-tok.png" alt="TikTok">
@@ -342,12 +323,6 @@
         </div>
         <div class="faq-section">
             <h2><img src="icon/ayudar.png" alt="Ayuda"> Preguntas Frecuentes</h2>
-            <div class="faq-item">
-                <div class="faq-question">¿Tienen una ubicación física?</div>
-                <div class="faq-answer">
-                    No disponemos de una sede física. Sin embargo, ofrecemos la flexibilidad de programar visitas a su lugar de trabajo, oficina o negocio. Alternativamente, podemos coordinar reuniones en ubicaciones céntricas, como restaurantes o cafeterías.
-                </div>
-            </div>
             <div class="faq-item">
                 <div class="faq-question">¿Cuál es el tiempo de entrega para un logotipo?</div>
                 <div class="faq-answer">
@@ -369,7 +344,7 @@
             <div class="faq-item">
                 <div class="faq-question">¿Ofrecen servicios de impresión?</div>
                 <div class="faq-answer">
-                    Nuestro equipo se especializa exclusivamente en diseño. Sin embargo, según el servicio requerido, podemos gestionar la coordinación con imprentas locales, incluyendo el costo adicional en la cotización y la gestión de los envíos. Esto dependerá del servicio específico y la ubicación.
+                    Nuestro equipo se especializa exclusivamente en diseño. Sin embargo, según el servicio requerido, podemos gestionar la coordinación con imprentas locales, incluyendo el costo adicional en la cotización y la gestión de los envíos. Esto dependerá del servicio específico.
                 </div>
             </div>
             <div class="faq-item">
@@ -391,7 +366,6 @@
                     • Pago Móvil.<br>
                     • Transferencia bancaria (Banco de Venezuela y Banco Banesco).<br>
                     • USDT (Binance y El dorado app).<br>
-                    • Divisas físicas (Puerto Ordaz, Ciudad Guayana).<br>
                     <br>
                     Con un 8% adicional:<br>
                     • Wise (USD).<br>
